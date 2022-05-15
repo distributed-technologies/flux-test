@@ -1,21 +1,18 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: cni
+  name: rook-ceph
+  namespace: rook-ceph
 spec:
-  releaseName: cni
+  releaseName: rook-ceph-cluster
   chart:
     spec:
-      chart: cni
+      chart: rook-ceph-cluster
       sourceRef:
         kind: HelmRepository
-        name: helm-charts
+        name: rook-ceph
         namespace: flux-system
-      version: "1.0.0"
   interval: 5m
   install:
     remediation:
       retries: 3
-  valuesFrom:
-    - kind: ConfigMap
-      name: cni-values
