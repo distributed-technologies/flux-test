@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: nginx
+  name: distributed-technologies
 spec:
   interval: 5m
-  url: https://helm.nginx.com/stable
+  url: https://distributed-technologies.github.io/helm-charts/

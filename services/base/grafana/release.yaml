@@ -1,16 +1,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: nginx
-  namespace: nginx
+  name: grafana
+  namespace: grafana
 spec:
-  releaseName: nginx
+  releaseName: grafana
   chart:
     spec:
-      chart: nginx-stable/nginx-ingress
+      chart: grafana
       sourceRef:
         kind: HelmRepository
-        name: nginx
+        name: distributed-technologies
         namespace: flux-system
   interval: 5m
   install:

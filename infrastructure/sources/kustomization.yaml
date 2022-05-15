@@ -4,4 +4,4 @@ namespace: flux-system
 resources:
   - podinfo.yaml
   - rook-ceph.yaml
-  - nginx.yaml
+  - distributed-technologies.yaml
