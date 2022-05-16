@@ -10,3 +10,12 @@ spec:
   values:
     image:
       tag: v1.7.2
+    csi:
+      provisionerTolerations:
+        - key: storage-node
+          operator: Exists
+          effect: NoSchedule
+      pluginTolerations:
+        - key: storage-node
+          operator: Exists
+          effect: NoSchedule
