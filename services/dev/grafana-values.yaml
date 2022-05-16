@@ -8,6 +8,9 @@ spec:
     spec:
       version: ">=1.0.0"
   values:
-    grafana:
-      adminUser: admin
-      adminPassword: password
+    ingress:
+      hosts:
+        - host: podinfo.production
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
