@@ -5,3 +5,4 @@ resources:
   - podinfo.yaml
   - rook-ceph.yaml
   - distributed-technologies.yaml
+  - prometheus.yaml
