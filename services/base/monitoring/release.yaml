@@ -1,19 +1,26 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kube-prometheus-stack
+  name: monitoring
   namespace: monitoring
 spec:
-  releaseName: kube-prometheus-stack
+  releaseName: monitoring
   chart:
     spec:
-      chart: kube-prometheus-stack
+      chart: podinfo
       sourceRef:
         kind: HelmRepository
-        name: prometheus
+        name: podinfo
         namespace: flux-system
   interval: 5m
   install:
     remediation:
       retries: 3
-#  values:
+  # Default values
+  # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
+  values:
+    cache: redis-master.redis:6379
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
