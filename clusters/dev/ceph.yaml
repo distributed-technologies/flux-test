@@ -17,5 +17,5 @@ spec:
       name: rook-ceph-osd-0
       namespace: rook-ceph
   prune: true
-  wait: true
+  wait: false
   timeout: 5m0s
