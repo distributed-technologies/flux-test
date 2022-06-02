@@ -11,6 +11,11 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./infrastructure/ceph/dev
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rook-ceph-osd-0
+      namespace: rook-ceph
   prune: true
   wait: true
   timeout: 5m0s
